@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head></head>
+    <body>
+        <div>Timezone {{ .Timezone }}</div>
+        <table border="1">
+            <tr>
+                <th>日付</th>
+                <th>天気</th>
+                <th>最高気温</th>
+                <th>最低気温</th>
+            </tr>
+            {{ range $i, $time := .Daily.Time }}
+            <tr>
+                <th>{{ index  $.Daily.Time $i }}</th>
+                <td>{{ $whethercode := index  $.Daily.Weathercode $i }}{{ $whethercode.GetString }}
+                </td>
+                <td>{{ index  $.Daily.Temperature2mMax $i }}</td>
+                <td>{{ index  $.Daily.Temperature2mMin $i }}</td>
+            </tr>
+            {{ end }}
+        </table>
+    </body>
+</html>
