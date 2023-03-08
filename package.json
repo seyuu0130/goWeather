@@ -1,0 +1,25 @@
+{
+  "name": "wether",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seyuu0130/goWeather.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seyuu0130/goWeather/issues"
+  },
+  "homepage": "https://github.com/seyuu0130/goWeather#readme",
+  "devDependencies": {
+    "textlint": "^13.3.1",
+    "textlint-filter-rule-allowlist": "^4.0.0",
+    "textlint-rule-preset-ja-technical-writing": "^7.0.0"
+  }
+}
