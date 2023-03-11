@@ -1,8 +1,11 @@
 name: run-textlint-minimum
-on: 
-  pull_request_target:
-    types: [ opened, synchronize ]
-    paths: [ 'contents/**/*.md' ]
+# コメントアウト
+# on: 
+#   pull_request_target:
+#     types: [ opened, synchronize ]
+#     paths: [ 'contents/**/*.md' ]
+
+on: [push]
 jobs:
   run-textlint-minimum:
     runs-on: ubuntu-latest
