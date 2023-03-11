@@ -1,11 +1,8 @@
 name: run-textlint-minimum
-# コメントアウト
-# on: 
-#   pull_request_target:
-#     types: [ opened, synchronize ]
-#     paths: [ 'contents/**/*.md' ]
-
-on: [push]
+on: 
+  pull_request_target:
+    types: [ opened, synchronize ]
+    paths: [ '*.md' ]
 jobs:
   run-textlint-minimum:
     runs-on: ubuntu-latest
@@ -17,11 +14,11 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 14
       - run: npm install
       - run: npx textlint ./contents/**/*.md >> ./.textlint.log
       - if: ${{ failure() }}
         run: gh pr comment --body-file ./.textlint.log "${URL}"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          URL: ${{ github.event.pull_request.html_url 
+          URL: ${{ github.event.pull_request.html_url }}
